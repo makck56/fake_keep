@@ -2,7 +2,7 @@
  * @Description: description
  * @Date: 2022-01-02 13:34:00
  * @LastEditors: maicq
- * @LastEditTime: 2022-01-03 12:04:10
+ * @LastEditTime: 2022-01-12 19:32:25
  */
 import React, {useState} from 'react';
 import {
@@ -13,7 +13,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import Echarts from 'native-echarts';
+import {PieChart} from 'react-native-charts-wrapper';
 const Detail = (props: any) => {
   const {children} = props;
   const [activeTab, setActiveTab] = useState(1);
@@ -22,26 +22,7 @@ const Detail = (props: any) => {
       color: activeTab === idx ? '#AEA8B8' : 'white',
     };
   }
-  const option = {
-    title: {
-      text: 'ECharts demo',
-    },
-    tooltip: {},
-    legend: {
-      data: ['销量'],
-    },
-    xAxis: {
-      data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
-    },
-    yAxis: {},
-    series: [
-      {
-        name: '销量',
-        type: 'bar',
-        data: [5, 20, 36, 10, 10, 20],
-      },
-    ],
-  };
+
   return (
     <View>
       <View style={styles.header}>
@@ -78,7 +59,25 @@ const Detail = (props: any) => {
         <ScrollView>
           <View>
             <Text>连续活动天数</Text>
-            <Echarts option={option} height={300} />
+            <PieChart
+              style={styles.chart}
+              data={{
+                dataSets: [
+                  {label: 'demo', values: [{label: 'Test', value: 1}]},
+                ],
+              }}
+            />
+          </View>
+          <View style={styles.overview}>
+            <View style={styles.overviewHeader}>
+              <Text>你累计运动时长</Text>
+              <Text>(分钟)</Text>
+            </View>
+            <View style={styles.sportTimeWrapper}>
+              <View style={styles.sportTime}>
+                <Text style={styles.sportTimeText}>2205</Text>
+              </View>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -103,6 +102,28 @@ const styles = StyleSheet.create({
     width: '100%',
     color: 'white',
     textAlign: 'center',
+  },
+  chart: {
+    width: '100%',
+    height: 100,
+  },
+  overview: {
+    paddingHorizontal: 10,
+  },
+  overviewHeader: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  sportTimeWrapper: {
+    justifyContent: 'center',
+  },
+  sportTime: {
+    width: 'auto',
+  },
+  sportTimeText: {
+    fontSize: 40,
+    color: '#585065',
   },
 });
 export default Detail;

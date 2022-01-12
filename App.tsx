@@ -1,3 +1,9 @@
+/*
+ * @Description: description
+ * @Date: 2022-01-12 15:29:14
+ * @LastEditors: maicq
+ * @LastEditTime: 2022-01-12 16:10:40
+ */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -14,18 +20,10 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
   useColorScheme,
-  View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Detail from './src/components/Detail';
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
