@@ -14,6 +14,8 @@ import {
   View,
 } from 'react-native';
 import {PieChart} from 'react-native-charts-wrapper';
+import SportDetail from './components/SportDetail';
+import SportList from './components/SportList';
 const Detail = (props: any) => {
   const {children} = props;
   const [activeTab, setActiveTab] = useState(1);
@@ -57,7 +59,7 @@ const Detail = (props: any) => {
       </View>
       <SafeAreaView>
         <ScrollView>
-          <View>
+          <View style={styles.sportDayStats}>
             <Text>连续活动天数</Text>
             <PieChart
               style={styles.chart}
@@ -68,16 +70,22 @@ const Detail = (props: any) => {
               }}
             />
           </View>
-          <View style={styles.overview}>
-            <View style={styles.overviewHeader}>
-              <Text>你累计运动时长</Text>
-              <Text>(分钟)</Text>
-            </View>
-            <View style={styles.sportTimeWrapper}>
-              <View style={styles.sportTime}>
-                <Text style={styles.sportTimeText}>2205</Text>
+          <View style={styles.pageContent}>
+            <View style={styles.overview}>
+              <View style={styles.overviewHeader}>
+                <Text>你累计运动时长</Text>
+                <Text>(分钟)</Text>
               </View>
+              <View style={styles.sportTimeWrapper}>
+                <View style={styles.sportTime}>
+                  <Text style={styles.sportTimeText}>2205</Text>
+                </View>
+              </View>
+              <SportDetail />
             </View>
+            <SportList
+              data={[{date: '11月10日', icon: '', desc: '运动3676步'}]}
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -90,7 +98,7 @@ const styles = StyleSheet.create({
     height: 40,
     paddingTop: 10,
     paddingBottom: 10,
-    backgroundColor: '#575060',
+    backgroundColor: '#5A4E61',
     flexDirection: 'row',
   },
   headerItem: {
@@ -103,12 +111,18 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
+  pageContent: {
+    paddingHorizontal: 10,
+  },
+  sportDayStats: {
+    backgroundColor: '#5A4E61',
+  },
   chart: {
     width: '100%',
     height: 100,
   },
   overview: {
-    paddingHorizontal: 10,
+    paddingBottom: 40,
   },
   overviewHeader: {
     width: '100%',
