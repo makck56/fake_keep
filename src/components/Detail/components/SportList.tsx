@@ -1,5 +1,11 @@
-import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+/*
+ * @Description: description
+ * @Date: 2022-01-13 10:37:08
+ * @LastEditors: maicq
+ * @LastEditTime: 2022-01-13 14:29:42
+ */
+import React from 'react'
+import {Image, StyleSheet, Text, View} from 'react-native'
 export interface ISportItem {
   date: string;
   icon: string;
@@ -9,7 +15,7 @@ interface IProps {
   data: Array<ISportItem>;
 }
 const SportList: React.FC<IProps> = props => {
-  const {data} = props;
+  const {data} = props
   const listNode = data.map(item => {
     return (
       <View style={styles.sportListItem} key={item.date}>
@@ -24,26 +30,26 @@ const SportList: React.FC<IProps> = props => {
           <Text>{item.desc}</Text>
         </View>
       </View>
-    );
-  });
-  return <View style={styles.sportList}>{listNode}</View>;
-};
+    )
+  })
+  return <View style={styles.sportList}>{listNode}</View>
+}
 const styles = StyleSheet.create({
   sportList: {
     borderTopWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#ccc'
   },
   date: {},
   icon: {
     width: 20,
-    height: 20,
+    height: 20
   },
   sportListItem: {
     paddingVertical: 12,
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   detail: {
-    flexDirection: 'row',
-  },
-});
-export default SportList;
+    flexDirection: 'row'
+  }
+})
+export default SportList

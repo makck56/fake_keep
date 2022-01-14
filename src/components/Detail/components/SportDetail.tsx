@@ -1,5 +1,11 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+/*
+ * @Description: description
+ * @Date: 2022-01-13 10:37:08
+ * @LastEditors: maicq
+ * @LastEditTime: 2022-01-13 14:30:10
+ */
+import React from 'react'
+import {StyleSheet, Text, View} from 'react-native'
 const exportDetail = () => {
   return (
     <View style={styles.sportDetails}>
@@ -16,23 +22,23 @@ const exportDetail = () => {
         <Text style={styles.itemValue}>11851</Text>
       </View>
     </View>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
   sportDetails: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
   detailItem: {},
   itemTitle: {
     width: '100%',
-    fontSize: 10,
+    fontSize: 10
   },
   itemValue: {
     color: '#564F5F',
     textAlign: 'center',
     fontSize: 18,
-    fontWeight: 'bold',
-  },
-});
-export default exportDetail;
+    fontWeight: 'bold'
+  }
+})
+export default exportDetail
