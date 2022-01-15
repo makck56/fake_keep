@@ -1,11 +1,12 @@
 /*
  * @Description: description
- * @Date: 2022-01-13 10:37:08
+ * @Date: 2022-01-13 21:40:19
  * @LastEditors: maicq
- * @LastEditTime: 2022-01-13 14:30:10
+ * @LastEditTime: 2022-01-15 17:32:59
  */
 import React from 'react'
 import {StyleSheet, Text, View} from 'react-native'
+import {colorVars} from '../../../styles/var'
 const exportDetail = () => {
   return (
     <View style={styles.sportDetails}>
@@ -23,7 +24,7 @@ const exportDetail = () => {
       </View>
     </View>
   )
-}
+} 
 const styles = StyleSheet.create({
   sportDetails: {
     flexDirection: 'row',
@@ -32,12 +33,13 @@ const styles = StyleSheet.create({
   detailItem: {},
   itemTitle: {
     width: '100%',
-    fontSize: 10
+    color: colorVars.TextColor3,
+    fontSize: 12
   },
   itemValue: {
-    color: '#564F5F',
+    color: colorVars.primaryTextColor,
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold'
   }
 })

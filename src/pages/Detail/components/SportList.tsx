@@ -1,11 +1,12 @@
 /*
  * @Description: description
- * @Date: 2022-01-13 10:37:08
+ * @Date: 2022-01-13 21:40:19
  * @LastEditors: maicq
- * @LastEditTime: 2022-01-13 14:29:42
+ * @LastEditTime: 2022-01-15 18:09:12
  */
 import React from 'react'
 import {Image, StyleSheet, Text, View} from 'react-native'
+import {colorVars} from '../../../styles/var'
 export interface ISportItem {
   date: string;
   icon: string;
@@ -27,7 +28,7 @@ const SportList: React.FC<IProps> = props => {
             style={styles.icon}
             source={require('../../../assets/icon/icon_data_list_steps.webp')}
           />
-          <Text>{item.desc}</Text>
+          <Text style={styles.desc}>{item.desc}</Text>
         </View>
       </View>
     )
@@ -35,10 +36,7 @@ const SportList: React.FC<IProps> = props => {
   return <View style={styles.sportList}>{listNode}</View>
 }
 const styles = StyleSheet.create({
-  sportList: {
-    borderTopWidth: 1,
-    borderColor: '#ccc'
-  },
+  sportList: {},
   date: {},
   icon: {
     width: 20,
@@ -46,10 +44,18 @@ const styles = StyleSheet.create({
   },
   sportListItem: {
     paddingVertical: 12,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    borderTopWidth: 1,
+    borderColor: colorVars.borderColor
   },
   detail: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    paddingVertical: 14,
+    paddingLeft: 14
+  },
+  desc: {
+    color: colorVars.primaryTextColor,
+    marginLeft: 20
   }
 })
 export default SportList

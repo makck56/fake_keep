@@ -2,7 +2,7 @@
  * @Description: description
  * @Date: 2022-01-12 15:29:14
  * @LastEditors: maicq
- * @LastEditTime: 2022-01-14 10:23:40
+ * @LastEditTime: 2022-01-15 17:38:08
  */
 /**
  * Sample React Native App
@@ -18,7 +18,7 @@ import React from 'react'
 import {SafeAreaView, ScrollView, StatusBar, useColorScheme} from 'react-native'
 
 import {Colors} from 'react-native/Libraries/NewAppScreen'
-import Detail from './src/components/Detail'
+import Detail from './src/pages/Detail'
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark'
 
